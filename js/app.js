@@ -148,7 +148,7 @@ CodeClubWorld.interceptForm = function() {
         var data = form.serializeHash();
         delete data.contact.agreed;
 
-        if (data.country.code === 'GB') {
+        if (data.venue.country.code === 'GB') {
           CodeClubWorld.registerWithUK(data);
         } else {
           CodeClubWorld.registerWithAPI(data);
@@ -264,8 +264,6 @@ function sanitizeDataForAPI(input) {
   } else {
     output.venue.website = ensureHTTP(output.venue.website);
   }
-
-  output.venue.country = output.country.code;
 
   return output;
 }
