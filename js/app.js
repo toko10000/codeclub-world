@@ -86,6 +86,7 @@ CodeClubWorld.makeMap = function() {
     $('.counter').append(clubs.length);
 
     var mcOptions = {
+      gridSize: 30,
       styles: [{
         textColor: 'white',
         url: '/img/map/cluster.png',
