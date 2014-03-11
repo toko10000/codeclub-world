@@ -1,7 +1,7 @@
 Code Club World
 ===============
 
-A worldwide network of coding clubs for children aged 9–11.
+A worldwide network of coding clubs for children.
 
 **The mission of CodeClubWorld.org** is to give every child in the
 world the chance to learn to code by providing project materials and
