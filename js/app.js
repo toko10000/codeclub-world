@@ -224,10 +224,15 @@ CodeClubWorld.trackMaterialClicks = function() {
   $(document).on('click', '.materials .button', function(e) {
     if (!window.ga) return;
 
+    e.preventDefault();
+
     var a = $(e.target);
+    var href = a.prop('href');
     var label = a.text();
 
     window.ga('send', 'event', 'Materials', 'click', label);
+
+    setTimeout(function() { location = href }, 100);
   });
 }
 
