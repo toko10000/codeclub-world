@@ -220,6 +220,17 @@ CodeClubWorld.customPlaceholders = function() {
       .each(hideLabel).each(showIfEmpty);
 };
 
+CodeClubWorld.trackMaterialClicks = function() {
+  $(document).on('click', '.materials .button', function(e) {
+    if (!window.ga) return;
+
+    var a = $(e.target);
+    var label = a.text();
+
+    window.ga('send', 'event', 'Materials', 'click', label);
+  });
+}
+
 function addressToString(data) {
   return unique(removeBlanks([
     data.name,
@@ -274,6 +285,7 @@ $(function() {
   CodeClubWorld.startClubButton();
   CodeClubWorld.customPlaceholders();
   CodeClubWorld.interceptForm();
+  CodeClubWorld.trackMaterialClicks();
 });
 
 })();
