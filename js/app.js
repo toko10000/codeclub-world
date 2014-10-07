@@ -249,10 +249,15 @@ CodeClubWorld.verifyClub = function(token) {
 }
 
 CodeClubWorld.verifyDone = function() {
+  $('.js-loader').hide();
   $('.js-verify-done').show();
 }
 
-CodeClubWorld.verifyFail = function() {
+CodeClubWorld.verifyFail = function(response, status, error) {
+  $('.js-loader').hide();
+  var errors = response.responseJSON.errors;
+  var message = response.responseJSON.message || 'We\'re not sure what happened, contact us for help';
+  $('.js-verify-fail .js-error').text(message);
   $('.js-verify-fail').show();
 }
 

@@ -13,6 +13,10 @@ a:hover, a:focus { color: #006cb0; }
   display: none;
 }
 
+.js-error {
+  color: #666;
+}
+
 .button.primary { background: #007cc9; }
 .button.primary:hover, .button.primary:focus { background: #006cb0; }
 
