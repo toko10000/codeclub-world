@@ -236,6 +236,26 @@ CodeClubWorld.trackMaterialClicks = function() {
   });
 }
 
+CodeClubWorld.verifyClub = function(token) {
+  $.ajax({
+    type        : 'POST',
+    url         : CodeClubWorld.api + '/verify/' + token,
+    dataType    : 'json',
+    contentType : 'application/json',
+    headers     : { 'Authorization': 'Bearer ' + CodeClubWorld.token }
+  })
+  .done(CodeClubWorld.verifyDone)
+  .fail(CodeClubWorld.verifyFail);
+}
+
+CodeClubWorld.verifyDone = function() {
+  $('.js-verify-done').show();
+}
+
+CodeClubWorld.verifyFail = function() {
+  $('.js-verify-fail').show();
+}
+
 function addressToString(data) {
   return unique(removeBlanks([
     data.name,
@@ -285,6 +305,17 @@ function sanitizeDataForAPI(input) {
   return output;
 }
 
+function getUrlParameter(param) {
+    var pageURL = window.location.search.substring(1);
+    var URLVariables = pageURL.split('&');
+    for (var i = 0; i < URLVariables.length; i++) {
+        var parameterName = URLVariables[i].split('=');
+        if (parameterName[0] == param) {
+            return parameterName[1];
+        }
+    }
+}
+
 $(function() {
   CodeClubWorld.makeMap();
   CodeClubWorld.startClubButton();
@@ -292,5 +323,10 @@ $(function() {
   CodeClubWorld.interceptForm();
   CodeClubWorld.trackMaterialClicks();
 });
+
+if ($('.js-verify').length) {
+  var token = getUrlParameter('token');
+  CodeClubWorld.verifyClub(token);
+}
 
 })();

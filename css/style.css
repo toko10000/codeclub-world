@@ -9,6 +9,10 @@ a, h1, h2, h3, h4, h5, h6 {
 
 a:hover, a:focus { color: #006cb0; }
 
+.js-hidden {
+  display: none;
+}
+
 .button.primary { background: #007cc9; }
 .button.primary:hover, .button.primary:focus { background: #006cb0; }
 
@@ -189,8 +193,8 @@ a:hover, a:focus { color: #006cb0; }
   bottom: -15px;
   left: 50%;
   margin-left: -10px;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #c6e1ec;
@@ -497,7 +501,7 @@ footer .wrap .button {
     display: block !important;
     position: absolute !important;
     top: 80% !important;
-    bottom: 0 !important;  
+    bottom: 0 !important;
     left: 0 !important;
   }
 
