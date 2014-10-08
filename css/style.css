@@ -17,6 +17,11 @@ a:hover, a:focus { color: #006cb0; }
   color: #666;
 }
 
+.js-loader {
+  margin: 0 auto;
+  text-align: center;
+}
+
 .button.primary { background: #007cc9; }
 .button.primary:hover, .button.primary:focus { background: #006cb0; }
 
